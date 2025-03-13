@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'g++ main.cpp -o Gandu'
+                    sh 'g++ main.cpp -o Gandu
                 }
             }
         }
