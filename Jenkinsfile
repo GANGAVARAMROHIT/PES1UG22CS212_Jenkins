@@ -1,16 +1,13 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
-                build 'PES1UG22CS212-1'
                 script {
                     sh 'g++ main.cpp -o PES1UG22CS212-1'
                 }
             }
         }
-
         stage('Test') {
             steps {
                 script {
@@ -18,14 +15,12 @@ pipeline {
                 }
             }
         }
-
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
             }
         }
     }
-
     post {
         failure {
             echo 'Pipeline failed'
